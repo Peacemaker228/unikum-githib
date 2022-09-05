@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import Card from 'src/client/components/Card/Card';
 import Subtitle from 'src/client/components/Subtitle/Subtitle';
-import { MainCards } from 'src/client/__moks__/Main/MainCards';
+import { MainCards } from 'src/client/__mocks__/Main/MainCards';
 
 const Home: FC = () => {
   return (
