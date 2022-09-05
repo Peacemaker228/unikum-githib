@@ -19,7 +19,7 @@ export class NextPostsController {
   }
 
   @Get(':id')
-  @Render('posts')
+  @Render('posts/[id]')
   @UseInterceptors(ParamsInterceptor)
   postsId() {
     return {};

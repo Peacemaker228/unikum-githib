@@ -1,0 +1,149 @@
+.header {
+  &__bg {
+    height: 40px;
+    box-sizing: border-box;
+    padding: 0 1.25em;
+    background: #fbfbfb;
+  }
+
+  &__container {
+    height: 100%;
+    max-width: 1460px;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: space-between;
+
+    &_item {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__link {
+    font-weight: 300;
+    font-size: 0.875rem;
+    line-height: 1rem;
+    color: #3b3b3b;
+    text-decoration: none;
+
+    &:first-of-type {
+      margin-right: 3em;
+      padding-left: 1.625em;
+    }
+  }
+
+  &__item {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    border-right: 1px solid #d9d6d6;
+    padding-right: 1.625em;
+  }
+
+  &__email {
+    font-weight: 400;
+    font-size: 0.875rem;
+    line-height: 1rem;
+    margin-left: 0.5em;
+    color: #064f7a;
+    text-decoration: none;
+  }
+
+  &__address {
+    margin-left: 1em;
+    font-weight: 400;
+    font-size: 0.875rem;
+    line-height: 1rem;
+    color: #3b3b3b;
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    max-width: 1460px;
+    margin: 0.6em auto;
+    box-sizing: border-box;
+    padding: 0 1.25em;
+
+    .nav {
+      &__list {
+        &_item {
+          display: inline-block;
+          margin-right: 4.375em;
+
+          a {
+            font-weight: 400;
+            font-size: 1rem;
+            line-height: 1.125rem;
+            color: #3b3b3b;
+            text-decoration: none;
+
+            &:hover {
+              background: linear-gradient(
+                93.29deg,
+                #064f7a 2.5%,
+                #006def 94.81%
+              );
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+              background-clip: text;
+            }
+          }
+
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+
+    &_phone {
+      font-weight: 500;
+      font-size: 1.25rem;
+      line-height: 1.5rem;
+      text-decoration: none;
+      color: #3b3b3b;
+
+      &:hover {
+        background: linear-gradient(93.29deg, #064f7a 2.5%, #006def 94.81%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+    }
+
+    &_item {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__icons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1.5em;
+
+    svg {
+      cursor: pointer;
+      fill: none;
+      transition: 0.3s;
+
+      &:hover {
+        fill: #057fc7;
+      }
+    }
+
+    &_text {
+      font-weight: 300;
+      font-size: 1rem;
+      line-height: 1rem;
+      color: #000000;
+      margin-top: 0.125em;
+    }
+  }
+}
