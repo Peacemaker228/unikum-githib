@@ -1,0 +1,43 @@
+.category {
+  max-width: 256px;
+  width: 100%;
+  &__title {
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.125rem;
+    color: #4d4d4d;
+    margin-bottom: 0.75em;
+  }
+  &__list {
+    list-style-type: none;
+    &_item {
+      //   padding: 0.75em 0 0.75em 1.063em;
+      text-align: left;
+      color: #4d4d4d;
+      transition: 0.1s;
+      //   color: #ffffff;
+
+      .category__list_link {
+        display: block;
+        text-decoration: none;
+
+        font-family: 'Ubuntu';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1rem;
+        // line-height: 1.125rem;
+        line-height: 2.625rem;
+        padding-left: 1.063em;
+
+        color: inherit;
+      }
+    }
+  }
+}
+
+.active {
+  color: #ffffff;
+  background: #057fc7;
+}
