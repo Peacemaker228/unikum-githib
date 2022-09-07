@@ -37,6 +37,7 @@ const Pagination = (props) => {
   // console.log(currentPage);
   return (
     <div className="pagination">
+      {/* {currentPage !== 1} */}
       {/* <svg
         className={currentPage <= 1 ? 'disabled' : ''}
         onClick={onPrevious}
@@ -93,14 +94,17 @@ const Pagination = (props) => {
           fillOpacity="0.85"
         />
       </svg> */}
-      <span>...</span>
-
-      <div
-        className={currentPage === lastPage ? 'disabled' : ''}
-        onClick={onNext}
-      >
-        Следующая страница
-      </div>
+      {currentPage !== lastPage && (
+        <>
+          <span>...</span>
+          <div
+            className={currentPage === lastPage ? 'disabled' : ''}
+            onClick={onNext}
+          >
+            Следующая страница
+          </div>
+        </>
+      )}
     </div>
   );
 };

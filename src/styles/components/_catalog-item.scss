@@ -1,0 +1,174 @@
+.catalog__item {
+  &_container {
+    max-width: 1440px;
+    display: flex;
+    justify-content: flex-start;
+
+    gap: 0 5.563em;
+
+    .item__image {
+      display: flex;
+      &_slider {
+        margin-right: 1.25em;
+        max-width: 102px;
+
+        img {
+          width: 102px;
+          max-height: 100px;
+          //   width: 100%;
+          height: 100%;
+        }
+      }
+      &_main {
+        max-width: 400px;
+      }
+    }
+    .item__description {
+      max-width: 615px;
+      &_title {
+        display: flex;
+        align-items: flex-end;
+        flex-wrap: wrap;
+        // margin-bottom: 1.25em;
+
+        .description__title_name {
+          font-family: 'Ubuntu';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 1.75rem;
+          line-height: 2rem;
+          color: #262626;
+
+          margin-right: 32px;
+        }
+        .description__title_type {
+          max-width: 84px;
+          width: 100%;
+          display: inline-block;
+          font-family: 'Ubuntu';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 0.875rem;
+          line-height: 1.813rem;
+          text-align: center;
+          color: #262626;
+
+          background: #ececec;
+          border-radius: 5px;
+        }
+        .description__title_article {
+          font-family: 'Ubuntu';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 0.875rem;
+          line-height: 2.5rem;
+          color: #787878;
+        }
+      }
+      &_price {
+        display: flex;
+        .description__price {
+          display: flex;
+          flex-direction: column;
+
+          margin-bottom: 2.375em;
+
+          &:first-of-type {
+            margin-right: 3.375em;
+          }
+          &_value {
+            font-family: 'Ubuntu';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 2.25rem;
+            line-height: 2.563rem;
+            color: #262626;
+
+            margin-bottom: 0.417em;
+            span {
+              font-family: 'Ubuntu';
+              font-style: normal;
+              font-weight: 400;
+              font-size: 14px;
+              line-height: 16px;
+
+              color: #787878;
+            }
+          }
+          &_text {
+            font-family: 'Ubuntu';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 0.875rem;
+            line-height: 1rem;
+            color: #787878;
+          }
+        }
+      }
+      &_text {
+        font-family: 'Ubuntu';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 0.875rem;
+        line-height: 1rem;
+        color: #787878;
+
+        margin-bottom: 2rem;
+      }
+      &_choice {
+        display: flex;
+        margin-bottom: 3.375em;
+
+        .description__choice {
+          &:not(:last-of-type) {
+            margin-right: 3.313em;
+          }
+          &_text {
+            display: inline-block;
+            font-family: 'Ubuntu';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 0.875rem;
+            line-height: 1rem;
+
+            margin-bottom: 0.875em;
+
+            color: #2e2e2e;
+            span {
+              color: #0687d3;
+              cursor: pointer;
+            }
+          }
+          &_count {
+            // width: 100%;
+            width: 122px;
+            height: 44px;
+            background: #ffffff;
+            border: 1px solid #dedede;
+            padding: 0 0.75em;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            font-family: 'Ubuntu';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 0.875rem;
+            line-height: 2.75rem;
+
+            color: #454545;
+            svg {
+              height: 100%;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+      &_btn-group {
+        > button:first-of-type {
+          margin-right: 20px;
+        }
+      }
+    }
+  }
+}
