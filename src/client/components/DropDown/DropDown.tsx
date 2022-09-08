@@ -16,13 +16,14 @@ const DropDown: FC<IDropDown> = ({ data, selected, setSelected }) => {
 
   useOnClickOutside(node, () => setIsActive(false));
 
-  console.log(data);
-
   return (
     <div className="dropdown">
       <div
         ref={node}
-        className={classNames('dropdown__container', isActive ? 'active' : '')}
+        className={classNames(
+          'dropdown__container',
+          isActive ? 'drop__active' : '',
+        )}
         onClick={() => setIsActive((prev) => !prev)}
       >
         <div className="dropdown__container_btn">{selected ?? '0000'}</div>

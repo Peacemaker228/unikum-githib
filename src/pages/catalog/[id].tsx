@@ -2,8 +2,11 @@ import { GetServerSideProps } from 'next/types';
 import { FC, useEffect } from 'react';
 import { useState } from 'react';
 import DropDown from 'src/client/components/DropDown/DropDown';
+import TabsCustom from 'src/client/components/TabsCustom/TabsCustom';
 import { IItem } from 'src/client/types/Item/IItem';
+import { articleArr, sizeArr } from 'src/client/__mocks__/DropDown/DropDown';
 import { productObj } from 'src/client/__mocks__/Item/Item';
+import { tabsContent } from 'src/client/__mocks__/TabsCustom/Tabs';
 import Button from './../../client/components/Button/Button';
 
 const CatalogItem: FC = () => {
@@ -14,16 +17,6 @@ const CatalogItem: FC = () => {
   const [count, setCount] = useState(0);
 
   console.log(article);
-
-  const articleArr: string[] = [
-    '14-8-8',
-    '228',
-    '13-37',
-    '1945',
-    '2k22',
-    'wasd',
-  ];
-  const sizeArr: string[] = ['M', 'L', 'XXL'];
 
   return (
     <div className="catalog__item">
@@ -125,6 +118,9 @@ const CatalogItem: FC = () => {
             <Button isBlue type="button" btnText="Добавить в корзину" />
           </div>
         </div>
+      </div>
+      <div className="catalog__item_about">
+        <TabsCustom content={tabsContent} />
       </div>
     </div>
   );

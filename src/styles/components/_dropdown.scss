@@ -1,7 +1,7 @@
 .dropdown {
   //   max-height: 87px;
   //   height: 100%;
-  .active::after {
+  .drop__active::after {
     transform: rotate(180deg);
   }
   &__container {

@@ -23,7 +23,7 @@ const CatalogCategory = () => {
               // onClick={() => setActive(!active)}
               className={classNames(
                 'category__list_item',
-                catId === el.ID ? 'active' : '',
+                catId === el.ID ? 'category__active' : '',
               )}
               key={el.ID}
             >
