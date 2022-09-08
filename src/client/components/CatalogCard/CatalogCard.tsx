@@ -15,14 +15,16 @@ const CatalogCard: FC<ICatalogCard> = ({ product }) => {
   return (
     <div className="catalog__card">
       <div className="catalog__card_image">
-        <Link href={`catalog/${product.ID}`}>
+        <Link href={`/catalog/${product.ID}`}>
           <img src={product.images.url} alt="product" />
         </Link>
       </div>
-      <h3 className="catalog__card_price">{product.price + ' ₽'}</h3>
-      <Link href={`catalog/${product.ID}`}>
+      <h3 className="catalog__card_price">
+        {product.price} <span>₽</span>
+      </h3>
+      <Link href={`/catalog/${product.ID}`}>
         <a
-          href={`catalog?category=${catId}/${product.ID}`}
+          href={`/catalog?category=${catId}/${product.ID}`}
           className="catalog__card_name"
         >
           {product.name}

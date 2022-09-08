@@ -1,9 +1,11 @@
 import { GetServerSideProps } from 'next/types';
 import { FC, useEffect } from 'react';
 import { useState } from 'react';
+import CatalogCard from 'src/client/components/CatalogCard/CatalogCard';
 import DropDown from 'src/client/components/DropDown/DropDown';
 import TabsCustom from 'src/client/components/TabsCustom/TabsCustom';
 import { IItem } from 'src/client/types/Item/IItem';
+import { productCard } from 'src/client/__mocks__/Catalog/CatalogCard';
 import { articleArr, sizeArr } from 'src/client/__mocks__/DropDown/DropDown';
 import { productObj } from 'src/client/__mocks__/Item/Item';
 import { tabsContent } from 'src/client/__mocks__/TabsCustom/Tabs';
@@ -44,13 +46,13 @@ const CatalogItem: FC = () => {
               <span className="description__price_value">
                 {productObj.retail} <span>₽</span>
               </span>
-              <span className="description__price_text">Розничная цена</span>
+              <span className="description__price_title">Розничная цена</span>
             </div>
             <div className="description__price">
               <span className="description__price_value">
                 <span>от</span> {productObj.wholesale} <span>₽</span>
               </span>
-              <span className="description__price_text">Оптовая цена</span>
+              <span className="description__price_title">Оптовая цена</span>
             </div>
           </div>
           <p className="item__description_text">{productObj.text}</p>
@@ -121,6 +123,16 @@ const CatalogItem: FC = () => {
       </div>
       <div className="catalog__item_about">
         <TabsCustom content={tabsContent} />
+      </div>
+      <div className="catalog__item_similar">
+        <h2>Похожие товары</h2>
+        <div className="item__similar_content">
+          {productCard.map((el, index) => {
+            if (index < 5) {
+              return <CatalogCard product={el} key={el.ID} />;
+            }
+          })}
+        </div>
       </div>
     </div>
   );
