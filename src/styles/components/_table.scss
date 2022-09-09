@@ -1,0 +1,43 @@
+.table {
+  max-width: 1440px;
+  width: 100%;
+  //   margin: 50px 0;
+  border: 1px solid #e7e7e7;
+  border-collapse: collapse;
+  caption {
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.125rem;
+    line-height: 1.313rem;
+    color: #4d4d4d;
+    text-align: center;
+
+    padding: 1.44em 0 1.389em;
+    border: 1px solid #e7e7e7;
+    border-bottom: none;
+  }
+  td,
+  th {
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 1rem;
+    line-height: 1.125rem;
+
+    color: #202020;
+
+    border: 1px solid #e7e7e7;
+    text-align: start;
+    padding: 0.813em 3.125em;
+    &:last-of-type {
+      text-align: center;
+      width: 21%;
+    }
+  }
+  th {
+    font-weight: 500;
+    font-size: 1.125rem;
+    line-height: 1.313rem;
+  }
+}

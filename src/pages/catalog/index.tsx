@@ -5,6 +5,7 @@ import CatalogCategory from 'src/client/components/CatalogCategory/CatalogCatego
 import Order from 'src/client/components/Order/Order';
 import { productCard } from 'src/client/__mocks__/Catalog/CatalogCard';
 import Pagination from './../../client/components/Pagination/Pagination';
+import PriceTabs from 'src/client/components/PriceTabs/PriceTabs';
 
 const Post: FC = () => {
   const [page, setPage] = useState(1);
@@ -28,6 +29,7 @@ const Post: FC = () => {
       <div className="catalog__container">
         <CatalogCategory />
         <div className="catalog__container_content">
+          <PriceTabs />
           <div className="catalog__container_grid">
             {currentData().map((el) => {
               return <CatalogCard product={el} key={el.ID} />;
@@ -42,6 +44,11 @@ const Post: FC = () => {
         </div>
       </div>
       <Order />
+      <div className="prices">
+        <div className="prices__container">
+          <h2 className="main__title">Цены</h2>
+        </div>
+      </div>
     </div>
   );
 };

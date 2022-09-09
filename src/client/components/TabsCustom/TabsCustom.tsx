@@ -1,49 +1,29 @@
 import React, { FC } from 'react';
 import { useState } from 'react';
 import classNames from 'classnames';
+import { tabsHeader } from 'src/client/__mocks__/Tabs/Tabs';
+import { ITabsArr } from 'src/client/types/TabsCustom/ITabsCustom';
 
 type ITubsContent = {
   content: string[];
+  active: number;
+  setActive: any;
+  header?: ITabsArr[];
+  price?: boolean;
 };
 
-const TabsCustom: FC<ITubsContent> = ({ content }) => {
-  const [active, setActive] = useState(1);
-
-  type ITabsArr = {
-    title: string;
-    ID: number;
-  };
-
-  const tabsArr: ITabsArr[] = [
-    {
-      title: 'Характеристики товара',
-      ID: 1,
-    },
-    {
-      title: 'Таблица размеров',
-      ID: 2,
-    },
-    {
-      title: 'Стоимость печати',
-      ID: 3,
-    },
-    {
-      title: 'Способы нанесения принта',
-      ID: 4,
-    },
-    {
-      title: 'Оплата и доставка',
-      ID: 5,
-    },
-  ];
-
-  console.log(active);
-
+const TabsCustom: FC<ITubsContent> = ({
+  content,
+  active,
+  setActive,
+  header = tabsHeader,
+  price,
+}) => {
   return (
     <div className="tabs">
       <div className="tabs__container">
         <ul className="tabs__container_list">
-          {tabsArr.map((el) => {
+          {header.map((el) => {
             return (
               <li
                 key={el.ID}

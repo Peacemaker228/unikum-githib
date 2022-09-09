@@ -8,12 +8,13 @@ import { IItem } from 'src/client/types/Item/IItem';
 import { productCard } from 'src/client/__mocks__/Catalog/CatalogCard';
 import { articleArr, sizeArr } from 'src/client/__mocks__/DropDown/DropDown';
 import { productObj } from 'src/client/__mocks__/Item/Item';
-import { tabsContent } from 'src/client/__mocks__/TabsCustom/Tabs';
+import { tabsContent } from 'src/client/__mocks__/Tabs/Tabs';
 import Button from './../../client/components/Button/Button';
 
 const CatalogItem: FC = () => {
   const [product, setProduct] = useState({} as IItem);
 
+  const [active, setActive] = useState(1);
   const [article, setArticle] = useState(null);
   const [size, setSize] = useState(null);
   const [count, setCount] = useState(0);
@@ -122,7 +123,11 @@ const CatalogItem: FC = () => {
         </div>
       </div>
       <div className="catalog__item_about">
-        <TabsCustom content={tabsContent} />
+        <TabsCustom
+          content={tabsContent}
+          active={active}
+          setActive={setActive}
+        />
       </div>
       <div className="catalog__item_similar">
         <h2>Похожие товары</h2>
