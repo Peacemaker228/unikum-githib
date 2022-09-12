@@ -14,7 +14,10 @@ export const Category: ICategory[] = [
   {
     ID: 3,
     name: 'Толстовки',
-    categories: [],
+    categories: [
+      { ID: 11, name: 'Женские', categories: [] },
+      { ID: 12, name: 'Мужские', categories: [] },
+    ],
   },
   {
     ID: 4,
