@@ -29,13 +29,15 @@ const CatalogItem: FC = () => {
       {/*  */}
       {/*  */}
       <div className="contacts">
-        <div className="contacts__container">
+        <div className="contacts__title">
           <h2 className="main__title">Наши контакты</h2>
+        </div>
+        <div className="contacts__container">
           <div className="contacts__container_main">
             <div className="contacts__address">
               <h3 className="contacts__main_title">Адрес</h3>
               <a
-                href="https://yandex.ru/maps/?um=constructor%3Abb6af8b9371d1773ca08fe8f5cbdfe18760593d4291de4c00a143b0c55b97303&source=constructorLink"
+                href="https://yandex.ru/maps/?um=constructor%3Aad167fb0861e3342e3dc4c5497e353c0b515be732d4b1d3efbc959372e267087&source=constructorLink"
                 className=""
               >
                 <span className="contacts__main_text">Рязанская ул., 19А.</span>
@@ -44,11 +46,8 @@ const CatalogItem: FC = () => {
             </div>
             <div className="contacts__email">
               <h3 className="contacts__main_title">Телефон и почта</h3>
-              <a
-                className="contacts__main_text tel"
-                href="tel:+7(922)640-16-66"
-              >
-                Телефон: <span>+7 (922) 640-16-66</span>
+              <a className="contacts__main_text" href="tel:+7(922)640-16-66">
+                +7 (922) 640-16-66
               </a>
               <a
                 className="contacts__main_text"
@@ -56,7 +55,7 @@ const CatalogItem: FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                E-mail: <span>perm@ms666.ru</span>
+                perm@ms666.ru
               </a>
             </div>
             <div className="contacts__requisites">
@@ -128,6 +127,12 @@ const CatalogItem: FC = () => {
               </li>
             </ul>
           </div>
+          <iframe
+            src="https://yandex.ru/map-widget/v1/?um=constructor%3Aad167fb0861e3342e3dc4c5497e353c0b515be732d4b1d3efbc959372e267087&amp;source=constructor"
+            width="782"
+            height="782"
+            frameBorder="0"
+          ></iframe>
         </div>
       </div>
       {/*  */}
