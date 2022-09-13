@@ -32,7 +32,10 @@ export const Category: ICategory[] = [
   {
     ID: 6,
     name: 'Утепленные куртки',
-    categories: [],
+    categories: [
+      { ID: 13, name: 'Женские', categories: [] },
+      { ID: 14, name: 'Мужские', categories: [] },
+    ],
   },
   {
     ID: 7,
