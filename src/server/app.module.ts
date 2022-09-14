@@ -6,6 +6,7 @@ import { ConfigModule } from '@nestjs/config';
 import { ServeStaticModule } from '@nestjs/serve-static';
 import { join } from 'path';
 import { PostsModule } from './posts/posts.module';
+import { DesignModule } from './design/design.module';
 
 import Next from 'next';
 
@@ -20,6 +21,7 @@ import Next from 'next';
       { viewsDir: null },
     ),
     PostsModule,
+    DesignModule
   ],
   controllers: [AppController],
   providers: [AppService],

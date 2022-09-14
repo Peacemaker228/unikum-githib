@@ -1,5 +1,18 @@
-.cards {
-  display: grid;
-  grid-gap: 20px;
-  grid-template-columns: repeat(3, 467px);
+.main {
+  &__cards {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__services {
+    display: flex;
+  }
+
+  &__gallery {
+    &_title {
+      margin-top: 8em;
+      text-align: center;
+    }
+  }
 }

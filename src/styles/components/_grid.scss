@@ -1,8 +1,13 @@
 .wrapper {
+  padding: 2em 0;
+
   &__container {
     max-width: 1460px;
     margin: 0 auto;
-    box-sizing: border-box;
     padding: 0 1.25em;
   }
+}
+
+main {
+  padding-top: 122px;
 }

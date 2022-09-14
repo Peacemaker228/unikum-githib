@@ -1,7 +1,12 @@
 import React, { FC } from 'react';
 
-const Subtitle: FC<{ subtitle: string }> = ({ subtitle }) => {
-  return <h2 className='title'>{subtitle}</h2>;
+interface ISubtitle {
+  subtitle: string;
+  className?: string;
+}
+
+const Subtitle: FC<ISubtitle> = ({ subtitle, className = '' }) => {
+  return <h2 className={`title ${className}`}>{subtitle}</h2>;
 };
 
 export default Subtitle;

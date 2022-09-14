@@ -1,0 +1,40 @@
+.hero {
+  &__images {
+    max-height: 695px;
+    height: 695px;
+    display: flex;
+    gap: 1em;
+
+    div {
+      width: 33%;
+      img {
+        width: 100%;
+    height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  &__title {
+    width: 100%;
+    margin-top: 0.3em;
+    font-weight: 700;
+    font-size: 4.5rem;
+    line-height: 5.4rem;
+    font-variant: small-caps;
+    color: #2e2e2e;
+
+    &_mod {
+      color: #057fc7;
+      margin-right: 0.5em;
+    }
+
+    span {
+      &:last-child {
+        svg {
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+}

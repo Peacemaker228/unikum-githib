@@ -1,5 +1,5 @@
 export interface ICard {
-  ID: number;
+  id: number;
   img: string;
   categoryName: string;
   subcategory: string[];

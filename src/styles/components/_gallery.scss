@@ -1,0 +1,61 @@
+.gallery {
+  display: grid;
+  grid-gap: 1em;
+  grid-template-areas:
+    'first second second . fourth fourth fifth fifth'
+    'first second second third fourth fourth fifth fifth'
+    'six six seven third eight nine nine ten '
+    '. . seven . . . . . ';
+
+  &__image {
+    object-fit: contain;
+    width: 100%;
+    height: auto;
+  }
+
+  .first {
+    grid-area: first;
+    padding-left: 3.75em;
+  }
+
+  .second {
+    grid-area: second;
+    margin-top: 4.375em;
+  }
+
+  .third {
+    grid-area: third;
+  }
+
+  .fourth {
+    grid-area: fourth;
+    margin-top: 6.1875em;
+  }
+
+  .fifth {
+    grid-area: fifth;
+    margin-top: 0.32em;
+  }
+
+  .six {
+    margin-top: -6.175em;
+    grid-area: six;
+  }
+
+  .seven {
+    margin-top: -6.175em;
+    grid-area: seven;
+  }
+
+  .eight {
+    grid-area: eight;
+  }
+
+  .nine {
+    grid-area: nine;
+  }
+
+  .ten {
+    grid-area: ten;
+  }
+}
