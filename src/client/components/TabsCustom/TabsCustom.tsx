@@ -1,5 +1,4 @@
 import React, { FC } from 'react';
-import { useState } from 'react';
 import classNames from 'classnames';
 import { tabsHeader } from 'src/client/__mocks__/Tabs/Tabs';
 import { ITabsArr } from 'src/client/types/TabsCustom/ITabsCustom';
@@ -17,7 +16,6 @@ const TabsCustom: FC<ITubsContent> = ({
   active,
   setActive,
   header = tabsHeader,
-  price,
 }) => {
   return (
     <div className="tabs">
@@ -47,8 +45,6 @@ const TabsCustom: FC<ITubsContent> = ({
                   {el}
                 </p>
               );
-            } else {
-              return null;
             }
           })}
         </div>

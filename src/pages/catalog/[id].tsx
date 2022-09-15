@@ -15,11 +15,9 @@ const CatalogItem: FC = () => {
   const [product, setProduct] = useState({} as IItem);
 
   const [active, setActive] = useState(1);
-  const [article, setArticle] = useState(null);
-  const [size, setSize] = useState(null);
+  const [article, setArticle] = useState(articleArr[0]);
+  const [size, setSize] = useState(sizeArr[0]);
   const [count, setCount] = useState(0);
-
-  console.log(article);
 
   return (
     <div className="catalog__item">
@@ -78,7 +76,7 @@ const CatalogItem: FC = () => {
               <span className="description__choice_text">Количество:</span>
               <div className="description__choice_count">
                 <svg
-                  onClick={() => count > 0 && setCount(count - 1)}
+                  onClick={() => count > 0 && setCount((prev) => prev - 1)}
                   width="15"
                   height="3"
                   viewBox="0 0 15 3"
@@ -96,7 +94,7 @@ const CatalogItem: FC = () => {
                 </svg>
                 {count}
                 <svg
-                  onClick={() => setCount(count + 1)}
+                  onClick={() => setCount((prev) => prev + 1)}
                   width="15"
                   height="15"
                   viewBox="0 0 15 15"

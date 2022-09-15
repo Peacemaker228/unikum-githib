@@ -1,17 +1,17 @@
-import React from 'react';
-import { FC } from 'react';
+import React, { FC } from 'react';
 
 type head = {
   item: string;
 };
 
 type row = {
-  data: string[];
+  data: dataRow;
 };
 
 type dataRow = {
-  id: number | string;
-  items: string[];
+  id: number;
+  price: number;
+  name: string;
 };
 
 type tableMain = {
@@ -28,9 +28,8 @@ export const TableHeadItem: FC<head> = ({ item }) => {
 export const TableRow: FC<row> = ({ data }) => {
   return (
     <tr>
-      {data.map((item) => {
-        return <td key={item}>{item}</td>;
-      })}
+      <td>{data.name}</td>
+      <td>{data.price} ₽</td>
     </tr>
   );
 };
@@ -54,7 +53,7 @@ const TableCustom: FC<tableMain> = ({
         </thead>
         <tbody>
           {tbodyData.map((item) => {
-            return <TableRow key={item.id} data={item.items} />;
+            return <TableRow key={item.id} data={item} />;
           })}
         </tbody>
       </table>

@@ -7,7 +7,6 @@ import {
   tbodyData,
   theadObj,
 } from 'src/client/__mocks__/Table/Table';
-import TabsCustom from '../TabsCustom/TabsCustom';
 
 const PriceTabs = () => {
   const [active, setActive] = useState(1);
@@ -39,13 +38,12 @@ const PriceTabs = () => {
               if (index + 1 === active) {
                 return (
                   <TableCustom
+                    key={index}
                     theadData={theadObj[active]}
                     tbodyData={el}
                     title={captionTitle[active]}
                   />
                 );
-              } else {
-                return null;
               }
             })}
           </div>

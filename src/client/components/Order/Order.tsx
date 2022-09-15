@@ -17,7 +17,7 @@ const Order = () => {
         <button
           className="order__container_button"
           type="button"
-          onClick={() => routerNavigate('/individual')}
+          onClick={() => routerNavigate('/design')}
         >
           Перейти к заказу
         </button>

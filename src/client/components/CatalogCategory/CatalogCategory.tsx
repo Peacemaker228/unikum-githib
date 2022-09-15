@@ -9,7 +9,6 @@ const CatalogCategory: FC = () => {
   // const [active, setActive] = useState(catId);
   const catId = Number(useRouter().query.category);
   const subId = Number(useRouter().query.subcategory);
-  console.log(Number(catId));
 
   return (
     <div className="category">

@@ -1,12 +1,11 @@
-import React from 'react';
-import { FC, useState, useRef } from 'react';
-import { useOnClickOutside } from './../../hooks/useOnClickOutside';
+import React, { FC, useState, useRef, Dispatch, SetStateAction } from 'react';
+import { useOnClickOutside } from '../../hooks/DropDown/useOnClickOutside';
 import classNames from 'classnames';
 
 type IDropDown = {
   data: string[];
   selected: string;
-  setSelected: any;
+  setSelected: Dispatch<SetStateAction<string>>;
 };
 
 const DropDown: FC<IDropDown> = ({ data, selected, setSelected }) => {
@@ -30,7 +29,7 @@ const DropDown: FC<IDropDown> = ({ data, selected, setSelected }) => {
         {isActive && (
           <div className="dropdown__container_content">
             <ul className="dropdown__list">
-              {data?.map((el, index) => {
+              {data.map((el, index) => {
                 return (
                   <li
                     key={index}

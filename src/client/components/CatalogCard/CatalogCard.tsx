@@ -23,12 +23,7 @@ const CatalogCard: FC<ICatalogCard> = ({ product }) => {
         {product.price} <span>₽</span>
       </h3>
       <Link href={`/catalog/${product.ID}`}>
-        <a
-          href={`/catalog?category=${catId}/${product.ID}`}
-          className="catalog__card_name"
-        >
-          {product.name}
-        </a>
+        <a className="catalog__card_name">{product.name}</a>
       </Link>
     </div>
   );

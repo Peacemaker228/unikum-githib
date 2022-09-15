@@ -4,4 +4,5 @@ export interface IButton {
   onClick?: () => void;
   isWhite?: boolean;
   isBlue?: boolean;
+  className?: string;
 }
