@@ -1,0 +1,91 @@
+.dropdown {
+  //   max-height: 87px;
+  //   height: 100%;
+  .drop__active::after {
+    transform: rotate(180deg);
+  }
+  &__container {
+    position: relative;
+    max-width: 87px;
+    width: 100%;
+    border: 1px solid #dedede;
+    padding: 0 1.775em 0 0.625em;
+
+    background: #ffffff;
+    cursor: pointer;
+    &::after {
+      content: '';
+      position: absolute;
+      border: 5px solid transparent;
+      border-top: 8px solid #676767;
+      transform: translateY(50%);
+      top: 25%;
+      right: 15%;
+      transition: 0.3s;
+      //   transform: translateY(-50%);
+    }
+
+    &_btn {
+      font-family: 'Ubuntu';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 0.875rem;
+      line-height: 2.75rem;
+
+      color: #8b8b8b;
+    }
+    &_content {
+      position: absolute;
+      z-index: 10;
+      padding: 0 0.625em 0 0.625em;
+      max-height: 220px;
+      overflow-y: auto;
+
+      left: 0;
+      right: 0;
+      outline: 1px solid #dedede;
+      border-top: none;
+      background: #ffffff;
+
+      &::-webkit-scrollbar {
+        background-color: #fff;
+        width: 15px;
+      }
+      /* background of the scrollbar except button or resizer */
+      &::-webkit-scrollbar-track {
+        background-color: #fff;
+      }
+
+      /* scrollbar itself */
+      &::-webkit-scrollbar-thumb {
+        background-color: #babac0;
+        border-radius: 16px;
+        border: 4px solid #fff;
+      }
+
+      /* set button(top and bottom of the scrollbar) */
+      &::-webkit-scrollbar-button {
+        display: none;
+      }
+
+      // & {
+      //   scrollbar-width: thin;
+      //   scrollbar-color: #babac0 rgb(255, 255, 255);
+      // }
+
+      .dropdown__list {
+        list-style-type: none;
+        &_item {
+          font-family: 'Ubuntu';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 0.875rem;
+          line-height: 2.75rem;
+
+          color: #8b8b8b;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

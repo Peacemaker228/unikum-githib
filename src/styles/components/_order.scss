@@ -1,0 +1,40 @@
+.order {
+  background: #057fc7;
+  padding: 6.594em 0;
+  &__container {
+    max-width: 983px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &_title {
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 2.25rem;
+      line-height: 2.625rem;
+      color: #ffffff;
+
+      max-width: 577px;
+    }
+    &_button {
+      max-width: 292px;
+      width: 100%;
+
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 1.125rem;
+      line-height: 4.625rem;
+      color: #262626;
+      text-align: center;
+
+      cursor: pointer;
+      outline: none;
+      border: none;
+
+      //   transition: 0.2s;
+      //   padding: 0 24px
+    }
+  }
+}

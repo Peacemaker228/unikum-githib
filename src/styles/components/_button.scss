@@ -1,0 +1,28 @@
+.button__custom {
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 3.313rem;
+  text-align: center;
+
+  max-width: 207px;
+  width: 100%;
+  //   padding: 0 32px;
+}
+
+.btn__white {
+  outline: 1px solid #064f7a;
+  color: #064f7a;
+  background: #ffffff;
+}
+
+.btn__blue {
+  background: #064f7a;
+  color: #ffffff;
+  border: none;
+}

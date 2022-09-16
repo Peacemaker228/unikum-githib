@@ -7,6 +7,7 @@ import { ServeStaticModule } from '@nestjs/serve-static';
 import { join } from 'path';
 import { PostsModule } from './posts/posts.module';
 import { DesignModule } from './design/design.module';
+import { CatalogModule } from './catalog/catalog.module';
 
 import Next from 'next';
 
@@ -21,7 +22,8 @@ import Next from 'next';
       { viewsDir: null },
     ),
     PostsModule,
-    DesignModule
+    DesignModule,
+    CatalogModule,
   ],
   controllers: [AppController],
   providers: [AppService],

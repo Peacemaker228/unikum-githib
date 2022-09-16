@@ -1,0 +1,13 @@
+.catalog {
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    &_grid {
+      max-width: 1071px;
+
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(252px, auto));
+      grid-gap: 1.875em 1.25em;
+    }
+  }
+}
