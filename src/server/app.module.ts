@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { RenderModule } from 'nest-next';
-import { ConfigModule } from '@nestjs/config';
+import { ConfigModule, ConfigService } from '@nestjs/config';
 import { ServeStaticModule } from '@nestjs/serve-static';
 import { join } from 'path';
 
@@ -18,20 +18,20 @@ import Next from 'next';
 
 @Module({
   imports: [
-    ConfigModule.forRoot(),
+    // ConfigModule.forRoot({
+    //   isGlobal: true,
+    // }),
     ServeStaticModule.forRoot({
       rootPath: join(__dirname, '../../', 'public'),
     }),
-    RenderModule.forRootAsync(
-      Next({ dev: process.env.mode == 'development' }),
-      { viewsDir: null },
-    ),
+    RenderModule.forRootAsync(Next({ dev: true }), { viewsDir: null }),
     CatalogModule,
     CustomDesignModule,
     ContactsModule,
     GalleryModule,
     PriceListModule,
   ],
-  controllers: [AppController]
+  providers: [ConfigService],
+  controllers: [AppController],
 })
-export class AppModule { }
+export class AppModule {}
