@@ -1,4 +1,4 @@
-import { IItem } from 'src/client/types/Item/IItem';
+import { IItem } from 'src/shared/types/client/Item/IItem';
 
 export const productObj: IItem = {
   ID: 1,

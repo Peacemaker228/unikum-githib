@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { ICard } from 'src/shared/types/Card/ICard';
+import { ICard } from 'src/shared/types/client/Card/ICard';
 import Link from 'next/link';
 
 const Card: FC<ICard> = ({ id, categoryName, img, type }) => {

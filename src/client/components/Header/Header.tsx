@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { HeaderData } from 'src/client/__mocks__/Header/Header';
 
 const Header = () => {
   const [isShadow, setIsShadow] = useState(false);
@@ -120,36 +121,15 @@ const Header = () => {
         </svg>
         <nav className="nav">
           <ul className="nav__list">
-            <li className="nav__list_item">
-              <Link href="/posts">
-                <a>Каталог</a>
-              </Link>
-            </li>
-            <li className="nav__list_item">
-              <Link href="/price">
-                <a>Цены</a>
-              </Link>
-            </li>
-            <li className="nav__list_item">
-              <Link href="/service">
-                <a>Услуги</a>
-              </Link>
-            </li>
-            <li className="nav__list_item">
-              <Link href="/gallery">
-                <a>Галерея</a>
-              </Link>
-            </li>
-            <li className="nav__list_item">
-              <Link href="/contacts">
-                <a>Контакты</a>
-              </Link>
-            </li>
-            <li className="nav__list_item">
-              <Link href="/design">
-                <a>Свой дизайн</a>
-              </Link>
-            </li>
+            {HeaderData.map((el) => {
+              return (
+                <li className="nav__list_item" key={el.id}>
+                  <Link href={el.path}>
+                    <a>{el.name}</a>
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
         </nav>
         <a href="tel:+7 (922) 640-16-66" className="header__nav_phone">

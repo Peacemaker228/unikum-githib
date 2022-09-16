@@ -1,10 +1,11 @@
 import { Module } from '@nestjs/common';
-import { CatalogService } from './catalog.service';
-import { CatalogController } from './catalog.controller';
-import { ConfigService } from '@nestjs/config';
+import { CatalogService } from './services/catalog.service';
+import { CatalogController } from './controllers/catalog.controller';
+import { NextCatalogController } from './controllers/next-catalog.controller';
+
 
 @Module({
-  controllers: [CatalogController],
-  providers: [CatalogService, ConfigService],
+  controllers: [CatalogController, NextCatalogController],
+  providers: [CatalogService],
 })
-export class CatalogModule {}
+export class CatalogModule { }

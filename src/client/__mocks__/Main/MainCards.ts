@@ -1,4 +1,4 @@
-import { ICard } from 'src/shared/types/Card/ICard';
+import { ICard } from 'src/shared/types/client/Card/ICard';
 
 export const MainCards: ICard[] = [
   {

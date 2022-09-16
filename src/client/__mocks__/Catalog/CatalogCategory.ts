@@ -1,4 +1,4 @@
-import { ICategory } from 'src/client/types/CatalogCategory/ICategory';
+import { ICategory } from 'src/shared/types/client/CatalogCategory/ICategory';
 
 export const Category: ICategory[] = [
   {
@@ -15,7 +15,11 @@ export const Category: ICategory[] = [
     ID: 3,
     name: 'Толстовки',
     categories: [
-      { ID: 11, name: 'Женские', categories: [] },
+      {
+        ID: 11,
+        name: 'Женские',
+        categories: [],
+      },
       { ID: 12, name: 'Мужские', categories: [] },
     ],
   },

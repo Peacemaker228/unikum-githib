@@ -1,4 +1,4 @@
-import { IHero } from 'src/shared/types/Hero/IHero';
+import { IHero } from 'src/shared/types/client/Hero/IHero';
 
 export const HeroData: IHero[] = [
   {

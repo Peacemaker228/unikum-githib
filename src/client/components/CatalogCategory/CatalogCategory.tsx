@@ -1,101 +1,64 @@
-import React, { FC, useState } from 'react';
+import React, { FC } from 'react';
 // import { useParams } from 'react-router-dom';
 import classNames from 'classnames';
 import Link from 'next/link';
-import { Category } from './../../__mocks__/Catalog/CatalogCategory';
-import { useRouter } from 'next/router';
+import { ICategory } from 'src/shared/types/client/CatalogCategory/ICategory';
 
-const CatalogCategory: FC = () => {
-  // const [active, setActive] = useState(catId);
-  const catId = Number(useRouter().query.category);
-  const subId = Number(useRouter().query.subcategory);
+interface ICatalog {
+  categories: ICategory[];
+  index: number;
+  ancestors: number[];
+  activeCategoryId: number;
+}
 
+const CatalogList: FC<ICatalog> = ({
+  categories,
+  index,
+  ancestors,
+  activeCategoryId,
+}) => {
   return (
-    <div className="category">
-      <h2 className="category__title">Каталог</h2>
-      <ul className="category__list">
-        {Category.map((el) => {
-          return (
+    <ul className="category__list" style={{ paddingLeft: `${index * 20}px` }}>
+      {categories.map((el) => {
+        return (
+          <>
             <li
               className={classNames(
                 'category__list_item',
-                catId === el.ID ? 'category__active' : '',
+                activeCategoryId === el.ID ? 'category__active' : '',
               )}
               key={el.ID}
             >
               <Link href={`catalog?category=${el.ID}`}>
                 <a
                   href={`catalog?category=${el.ID}`}
-                  className="category__list_link"
+                  className={classNames(
+                    'category__list_link',
+                    activeCategoryId === el.ID
+                      ? 'subcategory__link_active'
+                      : '',
+                  )}
                 >
                   {el.name}
                 </a>
               </Link>
-              <ul
-                className={classNames(
-                  'category__list',
-                  catId === el.ID && el.categories.length !== 0
-                    ? 'category__list_active'
-                    : 'category__list_none',
-                )}
-              >
-                {el.categories.map((sub) => {
-                  return (
-                    <li
-                      // onClick={() => setActive(!active)}
-                      className={classNames(
-                        'category__list_subitem',
-                        catId === sub.ID ? 'category__active' : '',
-                      )}
-                      key={sub.ID}
-                    >
-                      <Link
-                        href={`catalog?category=${el.ID}&subcategory=${sub.ID}`}
-                      >
-                        <a
-                          href={`catalog?category=${el.ID}&subcategory=${sub.ID}`}
-                          className={classNames(
-                            'subcategory__list_link',
-                            subId === sub.ID ? 'subcategory__link_active' : '',
-                          )}
-                        >
-                          {sub.name}
-                        </a>
-                      </Link>
-                    </li>
-                  );
-                })}
-              </ul>
             </li>
-          );
-        })}
-      </ul>
-    </div>
+            <li
+              style={{ display: ancestors.includes(el.ID) ? 'block' : 'none' }}
+            >
+              <CatalogList
+                key={el.ID}
+                categories={el.categories}
+                ancestors={ancestors}
+                activeCategoryId={activeCategoryId}
+                index={index + 1}
+              />
+            </li>
+          </>
+        );
+      })}
+    </ul>
   );
 };
 
-export default CatalogCategory;
-
-/* <ul className="category__list">
-        {Category.map((el) => {
-          return (
-            <li
-              // onClick={() => setActive(!active)}
-              className={classNames(
-                'category__list_item',
-                catId === el.ID ? 'category__active' : '',
-              )}
-              key={el.ID}
-            >
-              <Link href={`catalog?category=${el.ID}`}>
-                <a
-                  href={`catalog?category=${el.ID}`}
-                  className="category__list_link"
-                >
-                  {el.name}
-                </a>
-              </Link>
-            </li>
-          );
-        })}
-      </ul> */
+export default CatalogList;

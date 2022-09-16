@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import classNames from 'classnames';
 import { tabsHeader } from 'src/client/__mocks__/Tabs/Tabs';
-import { ITabsArr } from 'src/client/types/TabsCustom/ITabsCustom';
+import { ITabsArr } from 'src/shared/types/client/TabsCustom/ITabsCustom';
 
 type ITubsContent = {
   content: string[];

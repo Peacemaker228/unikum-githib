@@ -1,4 +1,4 @@
-import { ICatalogProduct } from 'src/client/types/CatalogCard/ICatalogCard';
+import { ICatalogProduct } from 'src/shared/types/client/CatalogCard/ICatalogCard';
 // import pic1 from '../../assets/images/catalog/black.png';
 // import pic2 from '../../assets/images/catalog/gallery.png';
 // import pic3 from '../../assets/images/catalog/finger.png';

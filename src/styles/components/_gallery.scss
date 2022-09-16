@@ -1,4 +1,7 @@
 .gallery {
+  max-width: 1920px;
+  margin: 0 auto;
+
   display: grid;
   grid-gap: 1em;
   grid-template-areas:
@@ -15,12 +18,13 @@
 
   .first {
     grid-area: first;
-    padding-left: 3.75em;
+    padding-left: 55px;
+    align-self: flex-end;
   }
 
   .second {
     grid-area: second;
-    margin-top: 4.375em;
+    align-self: flex-end;
   }
 
   .third {
@@ -29,21 +33,21 @@
 
   .fourth {
     grid-area: fourth;
-    margin-top: 6.1875em;
+    align-self: flex-end;
   }
 
   .fifth {
     grid-area: fifth;
-    margin-top: 0.32em;
+    align-self: flex-end;
   }
 
   .six {
-    margin-top: -6.175em;
+    align-self: flex-start;
     grid-area: six;
   }
 
   .seven {
-    margin-top: -6.175em;
+    align-self: flex-start;
     grid-area: seven;
   }
 

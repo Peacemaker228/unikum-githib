@@ -1,4 +1,4 @@
-import { IServiceCard } from 'src/shared/types/ServiceCard/IServiceCard';
+import { IServiceCard } from 'src/shared/types/client/ServiceCard/IServiceCard';
 
 export const ServiceCards: IServiceCard[] = [
   {

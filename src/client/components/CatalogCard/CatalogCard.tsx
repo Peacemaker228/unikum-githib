@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React from 'react';
 import { FC } from 'react';
-import { ICatalogProduct } from 'src/client/types/CatalogCard/ICatalogCard';
+import { ICatalogProduct } from 'src/shared/types/client/CatalogCard/ICatalogCard';
 import def from '../../assets/images/catalog/black.png';
 
 type ICatalogCard = {

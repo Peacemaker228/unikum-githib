@@ -5,7 +5,7 @@ import { useState } from 'react';
 import CatalogCard from 'src/client/components/CatalogCard/CatalogCard';
 import DropDown from 'src/client/components/DropDown/DropDown';
 import TabsCustom from 'src/client/components/TabsCustom/TabsCustom';
-import { IItem } from 'src/client/types/Item/IItem';
+import { IItem } from 'src/shared/types/client/Item/IItem';
 import { productCard } from 'src/client/__mocks__/Catalog/CatalogCard';
 import { articleArr, sizeArr } from 'src/client/__mocks__/DropDown/DropDown';
 import { productObj } from 'src/client/__mocks__/Item/Item';
@@ -23,114 +23,6 @@ const CatalogItem: FC = () => {
 
   return (
     <div className="catalog__item">
-      {/*  */}
-      {/*  */}
-      {/*  */}
-      <div className="contacts">
-        <div className="contacts__container">
-          <h2 className="main__title">Наши контакты</h2>
-          <div className="contacts__container_main">
-            <div className="contacts__address">
-              <h3 className="contacts__main_title">Адрес</h3>
-              <a
-                href="https://yandex.ru/maps/?um=constructor%3Abb6af8b9371d1773ca08fe8f5cbdfe18760593d4291de4c00a143b0c55b97303&source=constructorLink"
-                className=""
-              >
-                <span className="contacts__main_text">Рязанская ул., 19А.</span>
-                <span className="contacts__main_text">Пермь, Россия</span>
-              </a>
-            </div>
-            <div className="contacts__email">
-              <h3 className="contacts__main_title">Телефон и почта</h3>
-              <a
-                className="contacts__main_text tel"
-                href="tel:+7(922)640-16-66"
-              >
-                Телефон: <span>+7 (922) 640-16-66</span>
-              </a>
-              <a
-                className="contacts__main_text"
-                href="mailto:perm@ms666.ru"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                E-mail: <span>perm@ms666.ru</span>
-              </a>
-            </div>
-            <div className="contacts__requisites">
-              <h3 className="contacts__main_title">Реквизиты</h3>
-              <span className="contacts__main_text">ИНН 7814228141</span>
-              <span className="contacts__main_text">ОГРН 1157847167950</span>
-              <span className="contacts__main_text">ОКПО 01272893</span>
-              <span className="contacts__main_text">
-                Банк: ФИЛИАЛ «САНКТ-ПЕТЕРБУРГСКИЙ»
-              </span>
-              <span className="contacts__main_text">
-                АО «АЛЬФА-БАНК» г. Санкт-Петербург
-              </span>
-              <span className="contacts__main_text">
-                Р/счет: 40702810432280001131
-              </span>
-              <span className="contacts__main_text">БИК: 044030786</span>
-              <span className="contacts__main_text">
-                К/счет: 30101810600000000786
-              </span>
-            </div>
-            <h3 className="contacts__main_title">Мы в социальных сетях</h3>
-            <ul className="contacts__main_list">
-              <li className="contacts__item">
-                <Link href="/">
-                  <div className="contacts__item_social">
-                    <img
-                      src="../assets/images/contacts/inst.svg"
-                      alt="instagram"
-                    />
-                    <span className="contacts__main_text">Мы в инстаграм</span>
-                  </div>
-                </Link>
-              </li>
-              <li className="contacts__item">
-                <Link href="/">
-                  <div className="contacts__item_social">
-                    <img
-                      src="../assets/images/contacts/youtube.svg"
-                      alt="instagram"
-                    />
-                    <span className="contacts__main_text">
-                      Канал на YouTube
-                    </span>
-                  </div>
-                </Link>
-              </li>
-              <li className="contacts__item">
-                <Link href="/">
-                  <div className="contacts__item_social">
-                    <img
-                      src="../assets/images/contacts/vk.svg"
-                      alt="instagram"
-                    />
-                    <span className="contacts__main_text">Группа в ВК</span>
-                  </div>
-                </Link>
-              </li>
-              <li className="contacts__item">
-                <Link href="/">
-                  <div className="contacts__item_social">
-                    <img
-                      src="../assets/images/contacts/vk.svg"
-                      alt="instagram"
-                    />
-                    <span className="contacts__main_text">Группа в ВК</span>
-                  </div>
-                </Link>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      {/*  */}
-      {/*  */}
-      {/*  */}
       <div className="catalog__item_container">
         <div className="item__image">
           <div className="item__image_slider">

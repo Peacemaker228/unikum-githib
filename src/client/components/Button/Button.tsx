@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import classNames from 'classnames';
-import { IButton } from 'src/client/types/Button/IButton';
+import { IButton } from 'src/shared/types/client/Button/IButton';
 
 const Button: FC<IButton> = ({
   type = 'button',

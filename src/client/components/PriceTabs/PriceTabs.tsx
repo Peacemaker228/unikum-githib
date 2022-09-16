@@ -14,9 +14,9 @@ const PriceTabs = () => {
   return (
     <>
       {/* <TabsCustom content={tbodyData} active={active} setActive={setActive} /> */}
-      <div className="tabs-price">
-        <div className="tabs-price__container">
-          <ul className="tabs-price__container_list">
+      <div className="tabs">
+        <div className="tabs__container">
+          <ul className="tabs__container_list">
             {priceTabsHeader.map((el) => {
               return (
                 <li
@@ -33,7 +33,7 @@ const PriceTabs = () => {
             })}
           </ul>
           {/* <h2>Основные характеристики товара</h2> */}
-          <div className="tabs-price__container_content">
+          <div className="tabs__container_content">
             {tbodyData.map((el, index) => {
               if (index + 1 === active) {
                 return (

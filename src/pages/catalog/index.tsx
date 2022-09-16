@@ -6,6 +6,9 @@ import Order from 'src/client/components/Order/Order';
 import { productCard } from 'src/client/__mocks__/Catalog/CatalogCard';
 import Pagination from './../../client/components/Pagination/Pagination';
 import PriceTabs from 'src/client/components/PriceTabs/PriceTabs';
+import { Category } from 'src/client/__mocks__/Catalog/CatalogCategory';
+import Gallery from 'src/client/components/Gallery/Gallery';
+import CatalogMenu from 'src/client/components/CatalogCategory/CatalogMenu';
 
 const Post: FC = () => {
   const [page, setPage] = useState(1);
@@ -26,29 +29,26 @@ const Post: FC = () => {
 
   return (
     <div className="catalog">
-      <div className="catalog__container">
-        <CatalogCategory />
-        <div className="catalog__container_content">
-          <PriceTabs />
-          <div className="catalog__container_grid">
-            {currentData().map((el) => {
-              return <CatalogCard product={el} key={el.ID} />;
-            })}
+      <section className="wrapper__container">
+        <div className="catalog__container">
+          <CatalogMenu rootCategory={Category} />
+          <div className="catalog__container_content">
+            <div className="catalog__container_grid">
+              {currentData().map((el) => {
+                return <CatalogCard product={el} key={el.ID} />;
+              })}
+            </div>
+            <Pagination
+              currentPage={page}
+              totalCount={productCard.length}
+              pageSize={pageSize}
+              onPageChange={(page: number) => setPage(page)}
+            />
           </div>
-          <Pagination
-            currentPage={page}
-            totalCount={productCard.length}
-            pageSize={pageSize}
-            onPageChange={(page: number) => setPage(page)}
-          />
         </div>
-      </div>
+      </section>
       <Order />
-      <div className="prices">
-        <div className="prices__container">
-          <h2 className="main__title">Цены</h2>
-        </div>
-      </div>
+      <Gallery />
     </div>
   );
 };

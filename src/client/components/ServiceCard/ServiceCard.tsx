@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { IServiceCard } from 'src/shared/types/ServiceCard/IServiceCard';
+import { IServiceCard } from 'src/shared/types/client/ServiceCard/IServiceCard';
 
 const ServiceCard: FC<IServiceCard> = ({ id, img, name, subname }) => {
   return (
