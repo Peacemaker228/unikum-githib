@@ -11,14 +11,22 @@ type ICatalogCard = {
 
 const CatalogCard: FC<ICatalogCard> = ({ product }) => {
   const catId = Number(useRouter().query.category);
+  const router = useRouter();
+
+  const routerNavigate = (path: string) => {
+    router.push(path);
+  };
 
   return (
-    <div className="catalog__card">
-      <div className="catalog__card_image">
-        <Link href={`/catalog/${product.ID}`}>
+    <div
+      className="catalog__card"
+      onClick={() => routerNavigate(`/catalog/${product.ID}`)}
+    >
+      <Link href={`/catalog/${product.ID}`}>
+        <div className="catalog__card_image">
           <img src={product.images.url} alt="product" />
-        </Link>
-      </div>
+        </div>
+      </Link>
       <h3 className="catalog__card_price">
         {product.price} <span>₽</span>
       </h3>

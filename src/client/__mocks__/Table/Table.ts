@@ -37,17 +37,17 @@ export const tbodyData = [
   [
     {
       id: 1,
-      name: 'Бомберы',
+      name: 'Образец',
       price: 1750,
     },
     {
       id: 2,
-      name: 'Бомберы',
+      name: 'до 50 штук',
       price: 1750,
     },
     {
       id: 3,
-      name: 'Бомберы',
+      name: '50 штук',
       price: 1750,
     },
   ],

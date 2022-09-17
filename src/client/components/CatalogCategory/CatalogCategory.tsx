@@ -26,10 +26,12 @@ const CatalogList: FC<ICatalog> = ({
               className={classNames(
                 'category__list_item',
                 activeCategoryId === el.ID ? 'category__active' : '',
+                el.categories.length ? 'category__list_subitem' : '',
+                ancestors.includes(el.ID) ? 'subitem__active' : '',
               )}
               key={el.ID}
             >
-              <Link href={`catalog?category=${el.ID}`}>
+              <Link href={`catalog?category=${el.ID}&page=1`}>
                 <a
                   href={`catalog?category=${el.ID}`}
                   className={classNames(

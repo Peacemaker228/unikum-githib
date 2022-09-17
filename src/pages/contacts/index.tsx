@@ -13,7 +13,7 @@ const ContactsPage = () => {
                 <h3 className="contacts__main_title">Адрес</h3>
                 <a
                   href="https://yandex.ru/maps/?um=constructor%3Abb6af8b9371d1773ca08fe8f5cbdfe18760593d4291de4c00a143b0c55b97303&source=constructorLink"
-                  className=""
+                  className="contacts__address_link"
                 >
                   <span className="contacts__main_text">
                     Рязанская ул., 19А.
@@ -41,16 +41,23 @@ const ContactsPage = () => {
               <div className="contacts__requisites contacts__mt">
                 <h3 className="contacts__main_title">Реквизиты</h3>
                 <ul>
-                    <li className="contacts__main_text">ИНН 7814228141</li>
-                    <li className="contacts__main_text">ОГРН 1157847167950</li>
-                    <li className="contacts__main_text">ОКПО 01272893</li>
-                    <li className="contacts__main_text">Банк: ФИЛИАЛ «САНКТ-ПЕТЕРБУРГСКИЙ»</li>
-                    <li className="contacts__main_text">АО «АЛЬФА-БАНК» г. Санкт-Петербург</li>
-                    <li className="contacts__main_text">Р/счет: 40702810432280001131</li>
-                    <li className="contacts__main_text">БИК: 044030786</li>
-                    <li className="contacts__main_text">К/счет: 30101810600000000786</li>
+                  <li className="contacts__main_text">ИНН 7814228141</li>
+                  <li className="contacts__main_text">ОГРН 1157847167950</li>
+                  <li className="contacts__main_text">ОКПО 01272893</li>
+                  <li className="contacts__main_text">
+                    Банк: ФИЛИАЛ «САНКТ-ПЕТЕРБУРГСКИЙ»
+                  </li>
+                  <li className="contacts__main_text">
+                    АО «АЛЬФА-БАНК» г. Санкт-Петербург
+                  </li>
+                  <li className="contacts__main_text">
+                    Р/счет: 40702810432280001131
+                  </li>
+                  <li className="contacts__main_text">БИК: 044030786</li>
+                  <li className="contacts__main_text">
+                    К/счет: 30101810600000000786
+                  </li>
                 </ul>
-                
               </div>
               <h3 className="contacts__main_title">Мы в социальных сетях</h3>
               <ul className="contacts__main_list">

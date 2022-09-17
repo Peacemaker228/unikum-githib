@@ -19,7 +19,11 @@ const CatalogItem: FC = () => {
   const [active, setActive] = useState(1);
   const [article, setArticle] = useState(articleArr[0]);
   const [size, setSize] = useState(sizeArr[0]);
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(1);
+
+  console.log(count);
+
+  // console.log(count ? count + ' norm' : '228 state');
 
   return (
     <div className="catalog__item">
@@ -78,7 +82,7 @@ const CatalogItem: FC = () => {
               <span className="description__choice_text">Количество:</span>
               <div className="description__choice_count">
                 <svg
-                  onClick={() => count > 0 && setCount((prev) => prev - 1)}
+                  onClick={() => count > 1 && setCount((prev) => prev - 1)}
                   width="15"
                   height="3"
                   viewBox="0 0 15 3"
@@ -94,7 +98,28 @@ const CatalogItem: FC = () => {
                     fill="#C4C4C4"
                   />
                 </svg>
-                {count}
+                <input
+                  className="count__input"
+                  // type="text"
+                  type="number"
+                  maxLength={4}
+                  min={1}
+                  max={9999}
+                  autoComplete="off"
+                  value={count}
+                  pattern="[0-9]"
+                  onChange={(e) => {
+                    e.target.value.length <= 4 &&
+                      setCount(Number(e.target.value));
+                    console.log(e.target.value, 'onchange');
+                  }}
+                  onBlur={(e) => {
+                    console.log(Number(e.target.value), 'onblur');
+                    setCount(
+                      Number(e.target.value) ? Number(e.target.value) : 1,
+                    );
+                  }}
+                />
                 <svg
                   onClick={() => setCount((prev) => prev + 1)}
                   width="15"
@@ -130,13 +155,15 @@ const CatalogItem: FC = () => {
         />
       </div>
       <div className="catalog__item_similar">
-        <h2>Похожие товары</h2>
-        <div className="item__similar_content">
-          {productCard.map((el, index) => {
-            if (index < 5) {
-              return <CatalogCard product={el} key={el.ID} />;
-            }
-          })}
+        <div className="item__similar_container">
+          <h2>Похожие товары</h2>
+          <div className="item__similar_content">
+            {productCard.map((el, index) => {
+              if (index < 5) {
+                return <CatalogCard product={el} key={el.ID} />;
+              }
+            })}
+          </div>
         </div>
       </div>
     </div>

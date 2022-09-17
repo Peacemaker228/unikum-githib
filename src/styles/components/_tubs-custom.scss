@@ -73,11 +73,12 @@
         width: 100%;
         background: #ededed;
 
-        transition: 0.3s;
+        transition: 0.2s;
         cursor: pointer;
       }
       .tabs__active {
-        background: #ffffff;
+        background: #064f7a;
+        color: #ffffff;
       }
     }
     &_content {

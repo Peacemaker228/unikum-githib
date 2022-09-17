@@ -9,10 +9,19 @@ import PriceTabs from 'src/client/components/PriceTabs/PriceTabs';
 import { Category } from 'src/client/__mocks__/Catalog/CatalogCategory';
 import Gallery from 'src/client/components/Gallery/Gallery';
 import CatalogMenu from 'src/client/components/CatalogCategory/CatalogMenu';
+import Subtitle from 'src/client/components/Subtitle/Subtitle';
 
-const Post: FC = () => {
+import { useRouter } from 'next/router';
+
+interface ICatalogPage {
+  title: string
+}
+
+const CatalogPage: FC<ICatalogPage> = ({title = "Женщинам"}) => {
   const [page, setPage] = useState(1);
   // const [total, setTotal] = useState(1);
+  const pageId = Number(useRouter().query.page);
+  console.log(pageId);
 
   const pageSize = 8;
 
@@ -30,6 +39,8 @@ const Post: FC = () => {
   return (
     <div className="catalog">
       <section className="wrapper__container">
+        <Subtitle subtitle={title} />
+
         <div className="catalog__container">
           <CatalogMenu rootCategory={Category} />
           <div className="catalog__container_content">
@@ -53,4 +64,4 @@ const Post: FC = () => {
   );
 };
 
-export default Post;
+export default CatalogPage;

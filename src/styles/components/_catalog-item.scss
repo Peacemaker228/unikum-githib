@@ -1,10 +1,12 @@
 .catalog__item {
   &_container {
     max-width: 1440px;
+    margin: 0 auto;
     display: flex;
     justify-content: flex-start;
 
     gap: 0 5.563em;
+    margin-bottom: 4.5em;
 
     .item__image {
       display: flex;
@@ -149,16 +151,29 @@
             justify-content: space-between;
             align-items: center;
 
-            font-family: 'Ubuntu';
-            font-style: normal;
-            font-weight: 400;
-            font-size: 0.875rem;
-            line-height: 2.75rem;
-
-            color: #454545;
             svg {
               height: 100%;
               cursor: pointer;
+            }
+            .count__input {
+              &::-webkit-outer-spin-button,
+              &::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+              }
+
+              background: #fff;
+              font-family: 'Ubuntu';
+              font-style: normal;
+              font-weight: 400;
+              font-size: 0.875rem;
+              line-height: 2.6rem;
+              outline: none;
+              border: none;
+              color: #454545;
+              max-width: 50px;
+              text-align: center;
+              cursor: auto;
             }
           }
         }
@@ -170,21 +185,28 @@
       }
     }
   }
+  &_about {
+    margin-bottom: 4.5em;
+  }
   &_similar {
-    h2 {
-      margin-bottom: 0.833em;
+    .item__similar_container {
+      max-width: 1440px;
+      margin: 0 auto;
+      h2 {
+        margin-bottom: 0.833em;
 
-      font-family: 'Ubuntu';
-      font-style: normal;
-      font-weight: 500;
-      font-size: 2.25rem;
-      line-height: 2.563rem;
+        font-family: 'Ubuntu';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 2.25rem;
+        line-height: 2.563rem;
 
-      color: #4d4d4d;
-    }
-    .item__similar_content {
-      display: flex;
-      justify-content: space-between;
+        color: #4d4d4d;
+      }
+      .item__similar_content {
+        display: flex;
+        justify-content: space-between;
+      }
     }
   }
 }

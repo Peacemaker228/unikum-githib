@@ -1,4 +1,5 @@
 import classNames from 'classnames';
+import { useRouter } from 'next/router';
 import { DOTS, usePagination } from '../../hooks/Pagination/usePagination';
 
 const Pagination = (props) => {
@@ -17,6 +18,13 @@ const Pagination = (props) => {
     siblingCount,
     pageSize,
   });
+
+  const router = useRouter();
+  const catId = Number(useRouter().query.category);
+
+  const routerNavigate = (path) => {
+    router.push(path);
+  };
 
   // If there are less than 2 times in pagination range we shall not render the component
   if (currentPage === 0 || paginationRange.length < 2) {
@@ -71,7 +79,10 @@ const Pagination = (props) => {
               className={classNames('pagination_item', {
                 selected: pageNumber === currentPage,
               })}
-              onClick={() => onPageChange(pageNumber)}
+              onClick={() => {
+                onPageChange(pageNumber);
+                routerNavigate(`/catalog?category=${catId}&page=${pageNumber}`);
+              }}
             >
               {pageNumber}
             </li>
@@ -99,7 +110,12 @@ const Pagination = (props) => {
           <span>...</span>
           <div
             className={currentPage === lastPage ? 'disabled' : ''}
-            onClick={onNext}
+            onClick={() => {
+              onNext();
+              routerNavigate(
+                `/catalog?category=${catId}&page=${currentPage + 1}`,
+              );
+            }}
           >
             Следующая страница
           </div>

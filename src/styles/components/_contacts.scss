@@ -1,11 +1,24 @@
 .contacts {
+  // font-family: 'Ubuntu' !important;
+  .contacts__main_text {
+    transition: 0.1s;
+  }
+  .contacts__address_link {
+    &:hover {
+      color: #057fc7;
+    }
+  }
   &__mt {
-    margin: 1.5em 0 1em;
-
+    margin-bottom: 2.5em;
     a {
       display: block;
       width: fit-content;
       text-decoration: none;
+      transition: 0.2s;
+      &:hover,
+      &:hover span {
+        color: #057fc7;
+      }
 
       span {
         display: block;
@@ -19,7 +32,7 @@
       font-size: 1.5rem;
       line-height: 1.75rem;
       color: #4d4d4d;
-      margin-bottom: 1.5em;
+      margin-bottom: 1.25em;
     }
 
     &_text {
@@ -33,7 +46,7 @@
       color: #000000;
 
       &.tel {
-        margin-bottom: 1.111em;
+        margin-bottom: 1em;
       }
     }
 
@@ -48,8 +61,12 @@
         &_social {
           display: flex;
           align-items: center;
+          cursor: pointer;
           img {
             margin-right: 1em;
+          }
+          &:hover span {
+            color: #057fc7;
           }
         }
         &:nth-of-type(even) {
@@ -71,6 +88,12 @@
         height: 100%;
         max-height: 500px;
       }
+      .contacts__requisites {
+        .contacts__main_text {
+          font-family: 'Ubuntu';
+          line-height: 1.713rem;
+        }
+      }
     }
 
     span .contacts__main_text {
@@ -84,5 +107,5 @@
   font-size: 2.25rem;
   line-height: 2.5rem;
   color: #4d4d4d;
-  margin-bottom: 1em;
+  margin-bottom: 1.389em;
 }
