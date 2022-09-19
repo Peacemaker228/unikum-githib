@@ -164,6 +164,7 @@
       width: 35px;
       height: 35px;
       path {
+        fill: #000000;
         transition: 0.2s;
       }
     }
@@ -176,6 +177,12 @@
     }
     &:last-child {
       margin-right: 0;
+      svg {
+        path {
+          fill: none;
+          stroke: #000000;
+        }
+      }
       &:hover {
         svg {
           path {
