@@ -1,4 +1,8 @@
 .gallery {
+  &__container {
+    margin: 2.5em 0 6.25em;
+  }
+
   max-width: 1920px;
   margin: 0 auto;
 

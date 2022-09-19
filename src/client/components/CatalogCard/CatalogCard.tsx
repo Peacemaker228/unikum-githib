@@ -18,22 +18,18 @@ const CatalogCard: FC<ICatalogCard> = ({ product }) => {
   };
 
   return (
-    <div
-      className="catalog__card"
-      onClick={() => routerNavigate(`/catalog/${product.ID}`)}
-    >
-      <Link href={`/catalog/${product.ID}`}>
+    <Link href={`/catalog/${product.ID}`}>
+      <div className="catalog__card">
         <div className="catalog__card_image">
           <img src={product.images.url} alt="product" />
         </div>
-      </Link>
-      <h3 className="catalog__card_price">
-        {product.price} <span>₽</span>
-      </h3>
-      <Link href={`/catalog/${product.ID}`}>
-        <a className="catalog__card_name">{product.name}</a>
-      </Link>
-    </div>
+        <h3 className="catalog__card_price">
+          {product.price} <span>₽</span>
+        </h3>
+
+        <span className="catalog__card_name">{product.name}</span>
+      </div>
+    </Link>
   );
 };
 

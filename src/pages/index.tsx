@@ -56,11 +56,6 @@ const Home: FC = () => {
         </div>
       </section>
 
-      <Subtitle
-        subtitle="Галерея наших работ"
-        className="main__gallery_title"
-      />
-
       <Gallery />
     </div>
   );

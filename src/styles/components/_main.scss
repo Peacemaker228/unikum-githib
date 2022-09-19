@@ -7,11 +7,11 @@
 
   &__services {
     display: flex;
+    gap: 1.25em;
   }
 
   &__gallery {
     &_title {
-      margin-top: 2.5em;
       text-align: center;
     }
   }

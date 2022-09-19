@@ -3,8 +3,10 @@
 
   &_image {
     position: relative;
+    overflow: hidden;
     margin-bottom: 1.563em;
     max-width: 252px;
+
     &::after {
       transition: 0.2s;
       position: absolute;
@@ -16,15 +18,22 @@
       opacity: 0;
       background: rgba(0, 0, 0, 0.3);
     }
+    
     img {
       width: 100%;
       height: 100%;
+      transition: 0.2s;
       object-fit: contain;
     }
   }
   &:hover {
-    .catalog__card_image::after {
-      opacity: 1;
+    .catalog__card_image {
+      &::after {
+        opacity: 1;
+      }
+    }
+    img {
+      transform: scale(1.1, 1.1);
     }
   }
   &_price {

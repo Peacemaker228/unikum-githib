@@ -1,17 +1,24 @@
 import classNames from 'classnames';
-import { useRouter } from 'next/router';
+import { FC } from 'react';
 import { DOTS, usePagination } from '../../hooks/Pagination/usePagination';
 
-const Pagination = (props) => {
-  const {
-    onPageChange,
-    totalCount,
-    siblingCount = 1,
-    currentPage,
-    pageSize,
-    className,
-  } = props;
+interface IPagination {
+  onPageChange: (page: number) => void;
+  totalCount: number;
+  siblingCount?: number;
+  currentPage: number;
+  pageSize: number;
+  className?: string;
+}
 
+const Pagination: FC<IPagination> = ({
+  onPageChange,
+  totalCount,
+  siblingCount = 1,
+  currentPage,
+  pageSize,
+  className,
+}) => {
   const paginationRange = usePagination({
     currentPage,
     totalCount,
@@ -19,14 +26,6 @@ const Pagination = (props) => {
     pageSize,
   });
 
-  const router = useRouter();
-  const catId = Number(useRouter().query.category);
-
-  const routerNavigate = (path) => {
-    router.push(path);
-  };
-
-  // If there are less than 2 times in pagination range we shall not render the component
   if (currentPage === 0 || paginationRange.length < 2) {
     return null;
   }
@@ -41,8 +40,6 @@ const Pagination = (props) => {
 
   const lastPage = paginationRange[paginationRange.length - 1];
 
-  // console.log(lastPage);
-  // console.log(currentPage);
   return (
     <div className="pagination">
       {/* {currentPage !== 1} */}
@@ -68,7 +65,6 @@ const Pagination = (props) => {
         })}
       >
         {paginationRange.map((pageNumber, index) => {
-          // If the pageItem is a DOT, render the DOTS unicode character
           if (pageNumber === DOTS) {
             return <li className="pagination_item dots" key={index}></li>;
           }
@@ -80,8 +76,7 @@ const Pagination = (props) => {
                 selected: pageNumber === currentPage,
               })}
               onClick={() => {
-                onPageChange(pageNumber);
-                routerNavigate(`/catalog?category=${catId}&page=${pageNumber}`);
+                onPageChange(Number(pageNumber));
               }}
             >
               {pageNumber}
@@ -112,9 +107,6 @@ const Pagination = (props) => {
             className={currentPage === lastPage ? 'disabled' : ''}
             onClick={() => {
               onNext();
-              routerNavigate(
-                `/catalog?category=${catId}&page=${currentPage + 1}`,
-              );
             }}
           >
             Следующая страница
