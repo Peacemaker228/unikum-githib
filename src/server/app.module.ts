@@ -15,6 +15,7 @@ import { GalleryModule } from './gallery/gallery.module';
 import { PriceListModule } from './price-list/price-list.module';
 
 import Next from 'next';
+import { ServicesPageModule } from './services-page/services-page.module';
 
 @Module({
   imports: [
@@ -30,6 +31,7 @@ import Next from 'next';
     ContactsModule,
     GalleryModule,
     PriceListModule,
+    ServicesPageModule
   ],
   providers: [ConfigService],
   controllers: [AppController],
