@@ -7,10 +7,12 @@ import Subtitle from 'src/client/components/Subtitle/Subtitle';
 const PriceListPage = () => {
   return (
     <div className="price">
-      <section className="wrapper__container">
-        <Subtitle subtitle="Цены" />
+      <section className="wrapper">
+        <div className="wrapper__container">
+          <Subtitle subtitle="Цены" />
 
-        <PriceTabs />
+          <PriceTabs />
+        </div>
       </section>
       <Order />
       <Gallery />

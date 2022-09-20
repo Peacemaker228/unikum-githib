@@ -23,7 +23,6 @@ const CatalogPage: FC<ICatalogPage> = ({ title = 'Женщинам' }) => {
 
   const pageSize = 8;
 
-
   const currentData = () => {
     const firstPageIndex = (pageId - 1) * pageSize;
     const lastPageIndex = firstPageIndex + pageSize;
@@ -31,35 +30,35 @@ const CatalogPage: FC<ICatalogPage> = ({ title = 'Женщинам' }) => {
     return productCard.slice(firstPageIndex, lastPageIndex);
   };
 
-
   useEffect(() => {
     currentData();
   }, [pageId]);
 
   return (
     <div className="catalog">
-      <section className="wrapper__container">
-        <Subtitle subtitle={title} />
-
-        <div className="catalog__container">
-          <CatalogMenu rootCategory={Category} />
-          <div className="catalog__container_content">
-            <div className="catalog__container_grid">
-              {currentData().map((el) => {
-                return <CatalogCard product={el} key={el.ID} />;
-              })}
+      <section className="wrapper">
+        <div className="wrapper__container">
+          <Subtitle subtitle={title} />
+          <div className="catalog__container">
+            <CatalogMenu rootCategory={Category} />
+            <div className="catalog__container_content">
+              <div className="catalog__container_grid">
+                {currentData().map((el) => {
+                  return <CatalogCard product={el} key={el.ID} />;
+                })}
+              </div>
+              <Pagination
+                currentPage={pageId}
+                totalCount={productCard.length}
+                pageSize={pageSize}
+                onPageChange={(page: number) =>
+                  router.push({
+                    pathname: '/catalog',
+                    query: { category: catId, page: page },
+                  })
+                }
+              />
             </div>
-            <Pagination
-              currentPage={pageId}
-              totalCount={productCard.length}
-              pageSize={pageSize}
-              onPageChange={(page: number) =>
-                router.push({
-                  pathname: '/catalog',
-                  query: { category: catId, page: page },
-                })
-              }
-            />
           </div>
         </div>
       </section>

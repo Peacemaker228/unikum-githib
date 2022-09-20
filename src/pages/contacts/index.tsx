@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Footer from 'src/client/components/Footer/Footer';
 
 const ContactsPage = () => {
   return (
@@ -113,7 +114,7 @@ const ContactsPage = () => {
             </div>
             <div className="contacts__container_item">
               <iframe
-                src="https://yandex.ru/map-widget/v1/?um=constructor%3Adb2d8b88707e61dbc13e77caccec86501349e60e44826e112793cb3ec3fdec79&amp;source=constructor"
+                src="https://yandex.ru/map-widget/v1/?um=constructor%3Aad167fb0861e3342e3dc4c5497e353c0b515be732d4b1d3efbc959372e267087&amp;source=constructor"
                 frameBorder="0"
               ></iframe>
             </div>
