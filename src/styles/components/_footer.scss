@@ -34,11 +34,14 @@ footer {
           /* identical to box height, or 24px */
           text-decoration: none;
           color: #616161;
-          // &:hover {
-          //   font-weight: 400;
-
-          //   color: #141414;
-          // }
+          &:hover {
+            cursor: pointer;
+            background: linear-gradient(93.29deg, #064f7a 2.5%, #006def 94.81%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: #fff;
+          }
         }
       }
     }
@@ -79,7 +82,14 @@ footer {
       flex-direction: column;
       align-items: flex-start;
       gap: 1em 0;
+      > .footer__item_text {
+        transition: 0.2s;
+        &:hover {
+          color: #057fc7;
+        }
+      }
       .footer__item_text {
+        transition: 0.2s;
         text-decoration: none;
         font-family: 'Ubuntu';
         font-style: normal;
@@ -92,15 +102,29 @@ footer {
       .footer__connect_item {
         display: flex;
         gap: 0 0.625em;
+        cursor: pointer;
+        svg > path {
+          transition: 0.2s;
+        }
         &:last-of-type {
           svg path {
             fill: #a9a9a9;
           }
         }
-        .footer__item_text {
-          transition: 0.2s;
-          &:hover {
+        &:hover {
+          .footer__item_text {
             color: #057fc7;
+          }
+          svg > path {
+            fill: #057fc7;
+          }
+        }
+        &:nth-of-type(3) {
+          &:hover {
+            svg path {
+              fill: none;
+              stroke: #057fc7;
+            }
           }
         }
         img {

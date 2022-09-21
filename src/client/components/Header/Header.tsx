@@ -33,7 +33,7 @@ const Header = () => {
           <div className="header__container_item">
             <div className="header__item">
               <a
-                href="https://yandex.ru/maps/?um=constructor%3Abb6af8b9371d1773ca08fe8f5cbdfe18760593d4291de4c00a143b0c55b97303&source=constructorLink"
+                href="https://yandex.ru/maps/?um=constructor%3Aad167fb0861e3342e3dc4c5497e353c0b515be732d4b1d3efbc959372e267087&source=constructorLink"
                 className=""
               >
                 <svg
