@@ -1,0 +1,20 @@
+.slider__dot-group {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.563em;
+  gap: 0 0.625em;
+  &__dot {
+    border: none;
+    width: 20px;
+    height: 20px;
+    background: #e6e6e6;
+    border-radius: 50%;
+    transition: 0.2s;
+  }
+}
+.carousel__dot--selected {
+  background: #064f7a;
+}
+.image {
+  padding: 0 15px;
+}

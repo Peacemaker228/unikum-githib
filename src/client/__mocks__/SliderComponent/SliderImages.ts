@@ -39,4 +39,16 @@ export const SldierImages = [
     id: 10,
     url: '../../assets/images/gallery/ten.png',
   },
+  {
+    id: 11,
+    url: '../../assets/images/gallery/ten.png',
+  },
+  {
+    id: 12,
+    url: '../../assets/images/gallery/ten.png',
+  },
+  {
+    id: 13,
+    url: '../../assets/images/gallery/ten.png',
+  },
 ];
