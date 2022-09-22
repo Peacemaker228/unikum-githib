@@ -13,6 +13,7 @@ import { productObj } from 'src/client/__mocks__/Item/Item';
 import { tabsContent } from 'src/client/__mocks__/Tabs/Tabs';
 import Button from './../../client/components/Button/Button';
 import inst from '../../client/assets/images/contacts/inst.svg';
+import SliderComponent from 'src/client/components/SliderComponent/SliderComponent';
 
 const CatalogItem: FC = () => {
   const [product, setProduct] = useState({} as IItem);
@@ -186,6 +187,15 @@ const CatalogItem: FC = () => {
             </div>
           </div>
         </div>
+        {/* 
+// 
+// 
+//  */}
+        <SliderComponent />
+        {/* 
+        //  */}
+        {/* 
+        //  */}
       </section>
     </div>
   );
