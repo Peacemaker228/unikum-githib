@@ -10,11 +10,20 @@
     background: #e6e6e6;
     border-radius: 50%;
     transition: 0.2s;
+    &:hover {
+      background: #bbbbbb;
+    }
   }
 }
 .carousel__dot--selected {
-  background: #064f7a;
+  background: #064f7a !important;
 }
 .image {
-  padding: 0 15px;
+  object-fit: contain;
+}
+.slide__item {
+  .carousel__inner-slide {
+    width: calc(100% - 20px);
+    left: 10px;
+  }
 }

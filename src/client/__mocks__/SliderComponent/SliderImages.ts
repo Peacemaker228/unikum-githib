@@ -1,4 +1,6 @@
-export const SldierImages = [
+import { ISliderImages } from 'dist/shared/types/client/Slider/SliderImages';
+
+export const SldierImages: ISliderImages[] = [
   {
     id: 1,
     url: '../../assets/images/gallery/first.png',
@@ -15,10 +17,10 @@ export const SldierImages = [
     id: 4,
     url: '../../assets/images/gallery/fourth.png',
   },
-  {
-    id: 5,
-    url: '../../assets/images/gallery/fifth.png',
-  },
+  // {
+  //   id: 5,
+  //   url: '../../assets/images/gallery/fifth.png',
+  // },
   {
     id: 6,
     url: '../../assets/images/gallery/six.png',
