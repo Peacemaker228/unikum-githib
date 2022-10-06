@@ -218,7 +218,7 @@
 }
 
 .menuActive {
-  z-index: 1000;
+  // z-index: 1000;
 }
 
 .menuSpan {
@@ -226,7 +226,7 @@
   width: 22px;
   height: 2px;
   background: #595959;
-  transition: all 0.1s linear;
+  transition: all 0.2s linear;
   transform-origin: 1px;
 }
 

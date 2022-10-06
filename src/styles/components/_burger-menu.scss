@@ -1,8 +1,29 @@
 .burger-menu {
+  position: fixed;
+  background: #ffffff;
+  max-width: 317px;
+  width: 100%;
+  padding: 1.188em 0 1.625em 0;
+  transform: translateX(-100%);
+  z-index: 15;
+  transition: 0.3s;
+  top: 0;
+  left: 0;
+  height: 100%;
+
+  // padding: 1.188em 0.875em 1.625em;
+  // &__wrapper {
+  // }
   &__container {
-    border-bottom: 1px solid #DEDEDE;
+    padding: 0 0.875em 0.75em 0.875em;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    padding-bottom: 10px;
     &_headline {
-      .burger-menu__title {
+      cursor: pointer;
+      .headline__title {
         font-family: 'Ubuntu';
         font-style: normal;
         font-weight: 500;
@@ -11,7 +32,7 @@
 
         color: #064f7a;
       }
-      .burger-menu__text {
+      .headline__text {
         font-family: 'Ubuntu';
         font-style: normal;
         font-weight: 300;
@@ -21,5 +42,63 @@
         color: #676767;
       }
     }
+    .menuBtn {
+      position: absolute;
+      z-index: 10;
+      right: 10px;
+    }
   }
+  &__content {
+
+    overflow-y: scroll;
+    height: 100%;
+    &_list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px 0;
+      padding: 0 0.875em;
+      list-style-type: none;
+      .burger-menu__list_item {
+        .burger-menu__item_link {
+          // display: block;
+          font-family: 'Ubuntu';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 1rem;
+          line-height: 1.125rem;
+          text-decoration: none;
+          color: #3b3b3b;
+        }
+      }
+      .burger-menu__link_active {
+        background: linear-gradient(93.29deg, #064f7a 2.5%, #006def 94.81%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      &:first-of-type {
+    border-top: 1px solid #dedede;
+        
+        padding-top: 0.875em;
+        margin-bottom: 1.25em;
+      }
+      &:last-of-type {
+    border-bottom: 1px solid #dedede;
+
+        padding-bottom: 1.688em;
+        .burger-menu__item_link {
+          font-family: 'Roboto';
+          font-style: normal;
+          font-weight: 300;
+          font-size: 14px;
+          line-height: 16px;
+          color: #3b3b3b;
+        }
+      }
+    }
+  }
+}
+
+.burger-menu_active {
+  transform: translateX(0);
 }

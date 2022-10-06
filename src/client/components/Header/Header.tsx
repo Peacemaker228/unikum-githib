@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import { useOnClickOutside } from 'src/client/hooks/DropDown/useOnClickOutside';
 import { HeaderData } from 'src/client/__mocks__/Header/Header';
 import classNames from 'classnames';
+import BurgerMenu from '../BurgerMenu/BurgerMenu';
 
 const Header = () => {
   const [isShadow, setIsShadow] = useState(false);
@@ -33,10 +34,12 @@ const Header = () => {
     };
   }, []);
 
-  console.log(router.pathname);
-
   return (
     <header className={`header ${isShadow ? 'header_shadow' : ''}`}>
+      {/*  */}
+      
+      <BurgerMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+      {/*  */}
       <div className="header__bg">
         <div className="header__container">
           <div className="header__container_item">
@@ -106,7 +109,7 @@ const Header = () => {
       <div className="header__nav">
         <div
           className={classNames('menuBtn', menuOpen && 'menuActive')}
-          onClick={() => setMenuOpen((prev) => !prev)}
+          onClick={() => setMenuOpen(true)}
         >
           <span className="menuSpan"></span>
           <span className="menuSpan"></span>
