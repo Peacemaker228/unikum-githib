@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState, FC } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useOnClickOutside } from 'src/client/hooks/DropDown/useOnClickOutside';
@@ -6,21 +6,14 @@ import { HeaderData } from 'src/client/__mocks__/Header/Header';
 import classNames from 'classnames';
 import BurgerMenu from '../BurgerMenu/BurgerMenu';
 
-const Header = () => {
+const Header: FC = () => {
   const [isShadow, setIsShadow] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-
-  const closeMenu = () => {
-    setMenuOpen(false);
-  };
 
   const node = useRef();
   useOnClickOutside(node, () => setMenuOpen(false));
 
   const router = useRouter();
-  const routerNavigate = (path: string) => {
-    router.push(path);
-  };
 
   useEffect(() => {
     setIsShadow(window.scrollY > 0);

@@ -49,8 +49,7 @@
     }
   }
   &__content {
-
-    overflow-y: scroll;
+    overflow-y: auto;
     height: 100%;
     &_list {
       display: flex;
@@ -77,13 +76,13 @@
         background-clip: text;
       }
       &:first-of-type {
-    border-top: 1px solid #dedede;
-        
+        border-top: 1px solid #dedede;
+
         padding-top: 0.875em;
         margin-bottom: 1.25em;
       }
       &:last-of-type {
-    border-bottom: 1px solid #dedede;
+        border-bottom: 1px solid #dedede;
 
         padding-bottom: 1.688em;
         .burger-menu__item_link {
@@ -101,4 +100,92 @@
 
 .burger-menu_active {
   transform: translateX(0);
+}
+
+//
+//
+//
+.footer-mobile {
+  padding: 0 0.84em;
+  border-bottom: 1px solid #ffffff;
+  &__container {
+    padding: 1.75em 0;
+
+    &_address {
+      cursor: pointer;
+      margin-bottom: 1.125em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0 0.313em;
+      .footer-mobile__address_text {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 0.875rem;
+        line-height: 1rem;
+
+        color: #3b3b3b;
+      }
+    }
+    &_about {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.625em;
+      img {
+        cursor: pointer;
+      }
+      .footer-mobile__container_connect {
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 140px;
+        width: 100%;
+        background: #ececec;
+        border-radius: 5px;
+        padding: 0.813em 0;
+        &:first-of-type {
+          .footer-mobile__connect_text {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 0.75rem;
+            line-height: 0.875rem;
+            text-align: center;
+
+            color: #333333;
+          }
+        }
+        &:last-of-type {
+          .footer-mobile__connect_text {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 0.75rem;
+            line-height: 0.875rem;
+            text-align: center;
+            color: #064f7a;
+          }
+        }
+      }
+    }
+  }
+  &__info {
+    padding: 1.25em;
+    background: #f3f3f3;
+    &_text {
+      font-family: 'Ubuntu';
+      font-style: normal;
+      font-weight: 300;
+      font-size: 0.75rem;
+      line-height: 0.875rem;
+
+      color: #040404;
+      &:first-of-type {
+        margin-bottom: 0.917em;
+      }
+    }
+  }
 }

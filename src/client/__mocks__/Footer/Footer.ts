@@ -18,3 +18,42 @@ export const FooterSocial = [
   { id: 3, path: '/', name: 'Группа Вконтакте' },
   { id: 4, path: '/', name: 'YouTube' },
 ];
+
+export const FooterIcons = [
+  {
+    id: 1,
+    path: '/',
+    alt: 'vk',
+    source: '../../assets/images/footer/vk.svg',
+  },
+  {
+    id: 2,
+    path: '/',
+    alt: 'inst',
+    source: '../../assets/images/footer/inst.svg',
+  },
+  {
+    id: 3,
+    path: '/',
+    alt: 'facebook',
+    source: '../../assets/images/footer/facebook.svg',
+  },
+  {
+    id: 4,
+    path: '/',
+    alt: 'telegram',
+    source: '../../assets/images/footer/telegram.svg',
+  },
+  {
+    id: 5,
+    path: '/',
+    alt: 'whatsapp',
+    source: '../../assets/images/footer/whatsapp.svg',
+  },
+  {
+    id: 6,
+    path: '/',
+    alt: 'fb_messenger',
+    source: '../../assets/images/footer/fb_messanger.svg',
+  },
+];

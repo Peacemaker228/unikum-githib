@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useOnClickOutside } from 'src/client/hooks/DropDown/useOnClickOutside';
 import { FooterInfo, FooterMenu } from 'src/client/__mocks__/Footer/Footer';
+import FooterMobile from './FooterMobile';
 
 interface IBurger {
   menuOpen: boolean;
@@ -12,8 +13,9 @@ interface IBurger {
 
 const BurgerMenu: FC<IBurger> = ({ menuOpen, setMenuOpen }) => {
   const router = useRouter();
-  const routerNavigate = (path: string) => {
-    router.push(path);
+
+  const closeMenu = () => {
+    setMenuOpen(false);
   };
 
   const node = useRef();
@@ -27,7 +29,10 @@ const BurgerMenu: FC<IBurger> = ({ menuOpen, setMenuOpen }) => {
       <div className="burger-menu__wrapper">
         <div className="burger-menu__container">
           <Link href="/">
-            <div className="burger-menu__container_headline">
+            <div
+              onClick={() => closeMenu()}
+              className="burger-menu__container_headline"
+            >
               <h2 className="headline__title">Unikum</h2>
               <span className="headline__text">Пошив уникальной одежды</span>
             </div>
@@ -51,6 +56,7 @@ const BurgerMenu: FC<IBurger> = ({ menuOpen, setMenuOpen }) => {
           {FooterMenu.map((el) => {
             return (
               <li
+                onClick={() => closeMenu()}
                 key={el.id}
                 className={classNames(
                   'burger-menu__list_item',
@@ -69,7 +75,11 @@ const BurgerMenu: FC<IBurger> = ({ menuOpen, setMenuOpen }) => {
         <ul className="burger-menu__content_list">
           {FooterInfo.map((el) => {
             return (
-              <li key={el.id} className="burger-menu__list_item">
+              <li
+                onClick={() => closeMenu()}
+                key={el.id}
+                className="burger-menu__list_item"
+              >
                 <Link href={el.path}>
                   <a className="burger-menu__item_link">{el.name}</a>
                 </Link>
@@ -77,6 +87,7 @@ const BurgerMenu: FC<IBurger> = ({ menuOpen, setMenuOpen }) => {
             );
           })}
         </ul>
+        <FooterMobile isFooter={false} />
       </nav>
     </div>
   );
