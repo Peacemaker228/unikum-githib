@@ -1,6 +1,7 @@
 import React, { FC, SetStateAction, Dispatch } from 'react';
 import classNames from 'classnames';
 import Link from 'next/link';
+import { FooterInfo, FooterMenu } from 'src/client/__mocks__/Footer/Footer';
 
 interface IBurger {
   menuOpen: boolean;
@@ -26,11 +27,28 @@ const BurgerMenu: FC<IBurger> = ({ menuOpen, setMenuOpen }) => {
       </div>
       <nav className="burger-menu__content">
         <ul className="burger-menu__content_list">
-          <li className="burger-menu__list_item">
-            <Link href={''}>
-              <a className="burger-menu__item_link"></a>
-            </Link>
-          </li>
+          {FooterMenu.map((el) => {
+            return (
+              <li key={el.id} className="burger-menu__list_item">
+                <Link href={el.path}>
+                  <a className="burger-menu__item_link">{el.name}</a>
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
+      </nav>
+      <nav className="burger-menu__content">
+        <ul className="burger-menu__content_list">
+          {FooterInfo.map((el) => {
+            return (
+              <li key={el.id} className="burger-menu__list_item">
+                <Link href={el.path}>
+                  <a className="burger-menu__item_link">{el.name}</a>
+                </Link>
+              </li>
+            );
+          })}
         </ul>
       </nav>
     </div>
