@@ -1,13 +1,22 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { useOnClickOutside } from 'src/client/hooks/DropDown/useOnClickOutside';
 import { HeaderData } from 'src/client/__mocks__/Header/Header';
 import classNames from 'classnames';
 
 const Header = () => {
   const [isShadow, setIsShadow] = useState(false);
-  const router = useRouter();
+  const [menuOpen, setMenuOpen] = useState(false);
 
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
+
+  const node = useRef();
+  useOnClickOutside(node, () => setMenuOpen(false));
+
+  const router = useRouter();
   const routerNavigate = (path: string) => {
     router.push(path);
   };
@@ -95,6 +104,14 @@ const Header = () => {
         </div>
       </div>
       <div className="header__nav">
+        <div
+          className={classNames('menuBtn', menuOpen && 'menuActive')}
+          onClick={() => setMenuOpen((prev) => !prev)}
+        >
+          <span className="menuSpan"></span>
+          <span className="menuSpan"></span>
+          <span className="menuSpan"></span>
+        </div>
         <Link href="/">
           <svg
             width="52"

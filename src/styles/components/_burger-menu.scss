@@ -1,0 +1,25 @@
+.burger-menu {
+  &__container {
+    border-bottom: 1px solid #DEDEDE;
+    &_headline {
+      .burger-menu__title {
+        font-family: 'Ubuntu';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 1rem;
+        line-height: 1.125rem;
+
+        color: #064f7a;
+      }
+      .burger-menu__text {
+        font-family: 'Ubuntu';
+        font-style: normal;
+        font-weight: 300;
+        font-size: 0.75rem;
+        line-height: 0.875rem;
+
+        color: #676767;
+      }
+    }
+  }
+}
